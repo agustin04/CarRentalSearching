@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/border_1"
+    android:padding="8dp"
+    android:layout_margin="32dp"
+    >
+
+    <ImageView
+        android:id="@+id/carImageId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:background="@drawable/car_default"/>
+
+    <TextView
+        android:id="@+id/price"
+        android:layout_width="84dp"
+        android:layout_height="match_parent"
+        android:text="$--.-"
+        android:gravity="end"
+        android:textSize="18sp"
+        android:layout_below="@+id/carImageId"
+        android:layout_alignRight="@+id/carImageId"
+        android:layout_alignEnd="@+id/carImageId" />
+
+</RelativeLayout>
