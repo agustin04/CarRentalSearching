@@ -16,6 +16,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.carrentalsearching.R;
 import com.example.carrentalsearching.model.Category;
 
@@ -97,7 +98,13 @@ public class CategoryAdapter extends BaseAdapter {
         vh.text.setText(c.getName());
         //For now we're getting pictures from disc
 
-        if (((BitmapDrawable)vh.image.getDrawable()) == null || vh.position != position) {
+        Glide.with(mContext)
+                .load(c.getResourceId())
+                //.centerCrop()
+                .crossFade()
+                .into(vh.image);
+
+        /*if (((BitmapDrawable)vh.image.getDrawable()) == null || vh.position != position) {
             vh.position = position;
             /*Bitmap bitmap = getBitmapFromMemCache(c.getImagePath());
             if (bitmap == null) {
@@ -105,9 +112,10 @@ public class CategoryAdapter extends BaseAdapter {
                 bitmap = BitmapFactory.decodeResource(mContext.getResources(), c.getResourceId());
                 addBitmapToMemoryCache(c.getImagePath(), bitmap);
             }
-            vh.image.setImageBitmap(bitmap);*/
+            vh.image.setImageBitmap(bitmap);//
             vh.image.setImageResource(c.getResourceId());
-        }
+        }*/
+
         return convertView;
     }
 

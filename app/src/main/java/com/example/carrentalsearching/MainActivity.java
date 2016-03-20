@@ -37,10 +37,13 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    private ListView mCategoryListView;
+    @Bind(R.id.categoryLstView) ListView mCategoryListView;
     private CategoryAdapter mAdapter;
 
     // Get the current date
@@ -57,6 +60,9 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        ButterKnife.bind(this);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         //setSupportActionBar(toolbar);
 
@@ -77,7 +83,6 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        mCategoryListView = (ListView) findViewById(R.id.categoryLstView);
         mCategoryListView.setOnItemClickListener(mOnItemClickListener);
 
         mAdapter = new CategoryAdapter(Category.createDefaultCategoryList(), this);

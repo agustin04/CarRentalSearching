@@ -1,13 +1,30 @@
 package com.example.carrentalsearching.model;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 /**
  * Created by agustinmartinez on 3/13/16.
  */
 public class CarType {
+    @SerializedName("TypicalSeating")
+    @Expose
     private String typicalSeating;
+
+    @SerializedName("CarTypeName")
+    @Expose
     private String carTypeName;
+
+    @SerializedName("CarTypeCode")
+    @Expose
     private String carTypeCode;
+
+    @SerializedName("PossibleFeatures")
+    @Expose
     private String possibleFeatures;
+
+    @SerializedName("PossibleModels")
+    @Expose
     private String possibleModels;
 
     public CarType() {}

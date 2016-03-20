@@ -15,22 +15,24 @@ import com.example.carrentalsearching.tasks.CarResultTask;
 import com.example.carrentalsearching.model.HotWireResult;
 import com.example.carrentalsearching.model.Request;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
 /**
  * Created by agustinmartinez on 3/13/16.
  */
 public class ResultListActivity extends Activity{
 
     CarResultAdapter mAdapter;
-    ListView mListView;
+    @Bind(R.id.categoryLstView) ListView mListView;
 
-    ProgressBar mProgressBar;
+    @Bind(R.id.progressBar1) ProgressBar mProgressBar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.content_main);
+        ButterKnife.bind(this);
 
-        mListView = (ListView) findViewById(R.id.categoryLstView);
-        mProgressBar = (ProgressBar) findViewById(R.id.progressBar1);
         mProgressBar.setVisibility(View.VISIBLE);
 
         Intent i = getIntent();

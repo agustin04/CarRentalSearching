@@ -39,7 +39,7 @@ public class CarResultTask extends AsyncTask<Request, Void, HotWireResult> {
     protected HotWireResult doInBackground(Request... params) {
         HotWireResult result = null;
         Request r = params[0];
-        /*Call<HotWireResult> retrofitResponse = null;
+        Call<HotWireResult> retrofitResponse = null;
         if (r != null) {
             retrofitResponse = RequestFactory.getCarRentalRequest().findCars(r.getDestination(), r.getStartDate(), r.getEndDate(),
                     r.getPickUpTime(), r.getDropOffTime());
@@ -50,9 +50,9 @@ public class CarResultTask extends AsyncTask<Request, Void, HotWireResult> {
             } catch(IOException e) {
                 e.printStackTrace();
             }
-        }*/
+        }
 
-        String requestString = r.createStringRequest();
+        /*String requestString = r.createStringRequest();
         String jsonResult = null;
         try {
             //String newRequestStr = requestString.replace(" ", "+");
@@ -78,7 +78,7 @@ public class CarResultTask extends AsyncTask<Request, Void, HotWireResult> {
 
         if (jsonResult != null) {
             mHotWireResult = HotWireResultParser.parseJson(jsonResult);
-        }
+        }*/
         return mHotWireResult;
     }
 

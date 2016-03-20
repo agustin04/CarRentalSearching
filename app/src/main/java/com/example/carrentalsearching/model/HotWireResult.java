@@ -1,23 +1,37 @@
 package com.example.carrentalsearching.model;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
+import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by agustinmartinez on 3/13/16.
  */
 public class HotWireResult {
-    private List<Error> error;
+    @SerializedName("Errors")
+    @Expose
+    private List<Error> errors = new ArrayList<>();
+    @SerializedName("StatusCode")
+    @Expose
     private int statusCode;
+    @SerializedName("StatusDesc")
+    @Expose
     private String statusDesc;
+    @SerializedName("MetaData")
+    @Expose
     private CarMetaData metaData;
-    private List<CarRentalResult> result;
+    @SerializedName("Result")
+    @Expose
+    private List<CarRentalResult> result = new ArrayList<>();
 
-    public List<Error> getError() {
-        return error;
+    public List<Error> getErrors() {
+        return errors;
     }
 
-    public void setError(List<Error> error) {
-        this.error = error;
+    public void setErrors(List<Error> errors) {
+        this.errors = errors;
     }
 
     public int getStatusCode() {
@@ -53,7 +67,10 @@ public class HotWireResult {
     }
 
     class CarMetaData {
-        private List<CarType> carTypes;
+
+        @SerializedName("CarTypes")
+        @Expose
+        private List<CarType> carTypes = new ArrayList<>();
         public CarMetaData() {}
 
         public List<CarType> getCarTypes() {

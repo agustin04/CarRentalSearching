@@ -2,7 +2,7 @@ The UI is composed of the following parts:
 
 + Main Screen: A predifined search categories for different cities.
 + A Search Dialog: Currently supporting the search by destination, start date and end date.
-+ A result screen: Here you will get the list of cars found, if no error were present.
++ A result screen: Here you will get the list of cars found, if no errors were present.
 + A drawer: Currently not implemented.
 
 Activities
@@ -17,7 +17,7 @@ The main model is the HotWireResult, which will hold the same object retrived by
 Communication package
 Contains the Interface API to make request to HotWire.
 
-Note: The RequestFactory was implemented to be used with Retrofit. It's currently not used.
+The RequestFactory was implemented to be used with Retrofit.
 
 
 Adapters Package

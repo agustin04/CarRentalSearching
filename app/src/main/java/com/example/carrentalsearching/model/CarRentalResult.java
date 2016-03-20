@@ -1,27 +1,80 @@
 package com.example.carrentalsearching.model;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 import java.util.Date;
 
 /**
  * Created by agustinmartinez on 3/13/16.
  */
 public class CarRentalResult {
+    @SerializedName("CurrencyCode")
+    @Expose
     private String currencyCode;
+
+    @SerializedName("DeepLink")
+    @Expose
     private String DeepLink;
+
+    @SerializedName("ResultId")
+    @Expose
     private String resultId;
+
+    @SerializedName("HWRefNumber")
+    @Expose
     private String HWRefNumber;
+
+    @SerializedName("SubTotal")
+    @Expose
     private float subTotal;
+
+    @SerializedName("TaxesAndFees")
+    @Expose
     private float taxesAndFees;
+
+    @SerializedName("TotalPrice")
+    @Expose
     private float totalPrice;
+
+    @SerializedName("CarTypeCode")
+    @Expose
     private String carTypeCode;
+
+    @SerializedName("DailyRate")
+    @Expose
     private float dailyRate;
+
+    @SerializedName("DropoffDay")
+    @Expose
     private String dropoffDay;
+
+    @SerializedName("DropoffTime")
+    @Expose
     private String dropoffTime;
+
+    @SerializedName("PickupDay")
+    @Expose
     private String pickupDay;
+
+    @SerializedName("PickupTime")
+    @Expose
     private String pickupTime;
+
+    @SerializedName("LocationDescription")
+    @Expose
     private String locationDescription;
+
+    @SerializedName("MileageDescription")
+    @Expose
     private String mileageDescription;
+
+    @SerializedName("PickupAirport")
+    @Expose
     private String pickupAirport;
+
+    @SerializedName("RentalDays")
+    @Expose
     private int rentalDays;
 
     public CarRentalResult() {}
